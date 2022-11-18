@@ -1,6 +1,7 @@
 import { Request, Response} from "express";
 
-import { ClienteModel } from "../database/models/clientes";
+import { ClienteModel } from "../database/models/modelo";
+import { ClienteRepository } from "../repositories/ClienteRepository";
 
 interface IClienteController {
     create: (req: Request, res: Response) => Promise<Response>;
@@ -11,54 +12,55 @@ interface IClienteController {
 }
 
 
-class ClienteController implements IClienteController { 
+export class ClienteController implements IClienteController{
+    private clienteRepository: ClienteRepository
+    constructor(clienteRepository: ClienteRepository ) {
+        this.clienteRepository = clienteRepository;
+    }
+
     async create(req: Request, res: Response) {
-        const { nome, nomeSocial, cpf, rg, telefone, genero } = req.body;
-        const cliente = await ClienteModel.create({
-            nome,
-            nomeSocial,
-            cpf,
-            rg,
-            telefone,
-            genero
-        });
+        const clienteRepository = new ClienteRepository();
+        const cliente = await clienteRepository.create(req.body)
         return res.status(201).json(cliente)
     };
 
-
-    async findAll(req: Request, res: Response){
-        const clientes = await ClienteModel.findAndCountAll({});
-        return clientes.rows.length>0
-        ? res.status(200).json(clientes)
-        : res.status(404).send("Nenhum Cliente Encontrado");
+    async findAll(req: Request, res:Response) {
+        try {
+            const clienteRepository = new ClienteRepository();
+            const clientes = await clienteRepository.findAll();
+            // aq alterei o cod
+            return clientes
+              ? res.status(200).json(clientes)
+              : res.status(404).send("Nenhum associado encontrado");
+          } catch (err) {
+            console.log(err);
+          }
     };
 
-    async findOne(req: Request, res:Response) {
-        const { cpf } = req.params;
-        const cliente = await ClienteModel.findOne({where: {cpf} });
+    async findOne(req: Request, res: Response) {
+        const { id } = req.params;
+        const clienteRepository = new ClienteRepository();
+        const cliente = await clienteRepository.findOne(id);
         return cliente
-        ? res.status(200).json(cliente)
-        : res.status(404).send("Cliente não encontrado")
-    };
+          ? res.status(200).json(cliente)
+          : res.status(404).send("Cliente Não encontrado")
+      };
 
-    async update(req: Request, res: Response) {
-        const { cpf } = req.params;
-        const { nome, nomeSocial, rg, telefone, genero } = req.body;
-        await ClienteModel.update({
-          nome,
-          nomeSocial,
-          rg,
-          telefone,
-          genero
-        }, { where: { cpf } });
+    
+
+      async update(req: Request, res: Response) {
+        const { id } = req.params;
+        const clienteRepository = new ClienteRepository();
+        await clienteRepository.update(id, req.body);
         return res.status(200).send("Cliente atualizado com sucesso");
       };
 
       async delete(req: Request, res: Response) {
-        const { cpf } = req.params;
-        await ClienteModel.destroy({ where: { cpf } })
+        const { id } = req.params;
+        const clienteRepository = new ClienteRepository();
+        await clienteRepository.delete(id);
         return res.status(204).send("Cliente deletado com sucesso");
       };
 }
 
-export default new ClienteController();
+export default new ClienteController(new ClienteRepository);

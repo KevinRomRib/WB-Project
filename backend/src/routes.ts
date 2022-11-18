@@ -2,12 +2,11 @@ import express from "express";
 import ClienteController from "./controllers/ClienteController";
 
 
-const router = express.Router();
+export const router = express.Router();
 
 router.post("/clientes", ClienteController.create);
 router.get("/clientes", ClienteController.findAll);
-router.get("/clientes/:cpf", ClienteController.findOne);
-router.patch("/clientes/:cpf", ClienteController.update);
-router.delete("/clientes/:cpf", ClienteController.delete);
+router.get("/clientes/:id", ClienteController.findOne);
+router.patch("/clientes/:id", ClienteController.update);
+router.delete("/clientes/:id", ClienteController.delete);
 
-export { router };
