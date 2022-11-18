@@ -12,17 +12,17 @@ export const ClienteModel = db.define("clientes", {
     },
     cpf: {
         primaryKey: true,
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false, 
         unique: true,
     },
     rg: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         unique: true,
     },
     telefone: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     genero: {
