@@ -22,18 +22,24 @@ export interface IClienteUpdate{
 
 export class ClienteRepository{
     async findAll() {
-        const clientes = await ClienteModel.findAndCountAll({});
-        return clientes.count;
+        const clientes = await ClienteModel.findAll();
+        return clientes;
     }
 
     async findOne(id: number | string) {
-        const cliente = await ClienteModel.findOne({});
+        const cliente = await ClienteModel.findOne({ where: {id} });
         return cliente
     }
 
     async create(data: IClienteAtributes) {
+        const { nome, nomeSocial, cpf, rg, telefone, genero } = data;
         const cliente = await ClienteModel.create({
-            data,
+            nome,
+            nomeSocial,
+            cpf,
+            rg,
+            telefone,
+            genero
         });
         return cliente
     }

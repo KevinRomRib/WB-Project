@@ -1,7 +1,5 @@
 import { Request, Response} from "express";
-
-import { ClienteModel } from "../database/models/modelo";
-import { ClienteRepository } from "../repositories/ClienteRepository";
+import { ClienteRepository } from "../repositories/clienteRepository";
 
 interface IClienteController {
     create: (req: Request, res: Response) => Promise<Response>;
@@ -19,19 +17,23 @@ export class ClienteController implements IClienteController{
     }
 
     async create(req: Request, res: Response) {
+      try{
         const clienteRepository = new ClienteRepository();
         const cliente = await clienteRepository.create(req.body)
         return res.status(201).json(cliente)
+      }
+      catch(error) {
+        console.log(error)
+      }
     };
 
     async findAll(req: Request, res:Response) {
         try {
             const clienteRepository = new ClienteRepository();
             const clientes = await clienteRepository.findAll();
-            // aq alterei o cod
-            return clientes
+            return clientes.length > 0
               ? res.status(200).json(clientes)
-              : res.status(404).send("Nenhum associado encontrado");
+              : res.status(404).send("Nenhum cliente encontrado");
           } catch (err) {
             console.log(err);
           }
