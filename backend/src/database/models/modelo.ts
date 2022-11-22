@@ -16,12 +16,12 @@ export const ClienteModel = db.define("clientes", {
         allowNull: false,
     },
     cpf: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false, 
         unique: true,
     },
     rg: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true,
     },
@@ -46,7 +46,7 @@ export const ProdutoModel = db.define("produtos", {
         allowNull: false,
     },
     preco: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     }
 });
@@ -63,7 +63,7 @@ export const ServicoModel = db.define("servicos", {
         allowNull: false,
     },
     preco: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     }
 })
