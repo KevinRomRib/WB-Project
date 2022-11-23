@@ -37,9 +37,9 @@ export class ProdutoRepository{
     }
 
     async update(id:number | string, data: IProdutoAtributes) {
-        const produto = await ProdutoModel.update({
+        const produto = await ProdutoModel.update(
             data
-        }, {where: {id} });
+        , {where: {id} });
         return produto;
     }
 

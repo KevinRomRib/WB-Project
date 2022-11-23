@@ -45,9 +45,9 @@ export class ClienteRepository{
     }
 
     async update(id:number | string, data: IClienteAtributes) {
-        const cliente = await ClienteModel.update({
+        const cliente = await ClienteModel.update(
             data
-        }, {where: {id} });
+        , {where: {id} });
         return cliente;
     }
 

@@ -12,12 +12,11 @@ export const DivBotaoLink = styled.div`
     z-index: 1;
     color: #e1bee7;
     position: fixed;
-    color: #e1bee7;
     font-size: 60px;
     display: flex;
     top: 850px;
     bottom: 0;
-    left: 1800px;
+    left: 20px;
     :hover {
         color: #e1bee7d8;
     }

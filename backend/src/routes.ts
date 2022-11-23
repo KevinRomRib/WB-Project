@@ -15,12 +15,12 @@ router.delete("/clientes/:id", ClienteController.delete);
 router.post("/produtos", ProdutoController.create);
 router.get("/produtos", ProdutoController.findAll);
 router.get("/produtos/:id", ProdutoController.findOne);
-router.patch("/produtos/:id", ProdutoController.update);
+router.patch("/produtos/modificar/:id", ProdutoController.update);
 router.delete("/produtos/:id", ProdutoController.delete);
 
 
 router.post("/servicos", ServicoController.create);
 router.get("/servicos", ServicoController.findAll);
 router.get("/servicos/:id", ServicoController.findOne);
-router.patch("/servicos/:id", ServicoController.update);
+router.patch("/servicos/modificar/:id", ServicoController.update);
 router.delete("/servicos/:id", ServicoController.delete);

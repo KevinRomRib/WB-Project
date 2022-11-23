@@ -20,29 +20,39 @@ import ModificarServico from './components/listaServicos/modificarServico'
 // Importando Pedido
 import Pedido from './pages/pedido'
 
+// Importando Listagens
+import Listagens from "./pages/listagens";
+
 function App() {
   return (
     <>
       <Routes>
+
         {/* Clientes */}
         <Route path="/" element={<Cliente />} />
         <Route path="/cliente/:id" element={<ClienteInfo />} />
         <Route path="/cliente/cadastrar" element={<CadastroCliente />} />
         <Route path="/cliente/modificar/:id" element={<ModificarCliente />} />
         <Route path="/cliente/excluir/:id" element={<Cliente />} />
+        
         {/* Produtos */}
         <Route path="/produtos" element={<Produtos />} />
         <Route path="/produto/cadastrar" element={<CadastroProduto />} />
         <Route path="/produto/modificar/:id" element={<ModificarProduto />} />
+        <Route path="/produto/excluir/:id" element={<Produtos />} />
 
         {/* Serviços */}
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/servico/cadastrar" element={<CadastroServico />} />
-        <Route path="/servico/modificar/:id" element={<ModificarServico />} />
+        <Route path="/servico/modificar/:id" element={<ModificarServico />} />        
+        <Route path="/servico/excluir/:id" element={<Servicos />} />
+
+        {/* Listagens */}
+        <Route path="/listagens" element={<Listagens />} />
 
         {/* Pedidos */}
         <Route path="/pedido" element={<Pedido />} />
-        
+
       </Routes>
     </>
   )

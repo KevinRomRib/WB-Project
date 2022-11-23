@@ -14,8 +14,7 @@ function ModificarCliente() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const onSubmit = async data => {
-      console.log(data);
-      await api.patch(`/clientes/modificar/${idUsuario}`, {
+    api.patch(`/clientes/modificar/${idUsuario}`, {
         nome: data.nome,
         nomeSocial: data.nomeSocial,
         cpf: data.cpf,
@@ -24,7 +23,7 @@ function ModificarCliente() {
         genero: data.genero,
       });
       navigate('/');
-    };
+    }
 
     return (
         <>

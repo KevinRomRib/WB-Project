@@ -37,9 +37,9 @@ export class ServicoRepository{
     }
 
     async update(id:number | string, data: IServicoAtributes) {
-        const servico = await ServicoModel.update({
+        const servico = await ServicoModel.update(
             data
-        }, {where: {id} });
+        , {where: {id} });
         return servico;
     }
 

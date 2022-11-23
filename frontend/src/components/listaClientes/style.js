@@ -38,7 +38,6 @@ export const Trash = styled.div`
 export const DivOpcoes = styled.div`
     display: flex;
     gap: 20px;
-    z-index: 1;
 `;
 
 export const Icone = styled.div`

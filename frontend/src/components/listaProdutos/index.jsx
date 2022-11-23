@@ -29,10 +29,12 @@ function ListaProdutos() {
             <Nome>{produto.preco}</Nome>
         </DivNomePreco>
         <DivOpcoes>
-            <Link to={'/produto/modificar'}>
+            <Link to={`/produto/modificar/${produto.id}`}>
                 <Icone><ion-icon name="create-outline"></ion-icon></Icone>
             </Link>
-            <Excluir/>
+            <Link to={`/produto/excluir/${produto.id}`}>
+                <Excluir />
+            </Link>
         </DivOpcoes>
     </Li>)
 

@@ -29,10 +29,12 @@ function ListaServico() {
         <Nome>{servico.preco}</Nome>
         </DivNomePreco>
         <DivOpcoes>
-            <Link to={'/servico/modificar'}>
+            <Link to={`/servico/modificar/${servico.id}`}>
                 <Icone><ion-icon name="create-outline"></ion-icon></Icone>
             </Link>
-            <Excluir/>
+            <Link to={`/servico/excluir/${servico.id}`}>
+                <Excluir />
+            </Link>
         </DivOpcoes>
     </Li>)
 

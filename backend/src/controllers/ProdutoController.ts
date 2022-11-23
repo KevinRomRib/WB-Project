@@ -51,9 +51,9 @@ export class ProdutoController implements IProdutoController{
         const { id } = req.params;
         const clienteRepository = new ProdutoRepository();
         await clienteRepository.update(id, req.body);
-        return res.status(200).send("Cliente atualizado com sucesso");
+        return res.status(200).send("Produto atualizado com sucesso");
       };
-
+  
       async delete(req: Request, res: Response) {
         const { id } = req.params;
         const produtoRepository = new ProdutoRepository();

@@ -19,6 +19,15 @@ export const LinkNav = styled.a`
     cursor: pointer; 
 `;
 
+export const LinkNavHam = styled.a`
+    text-decoration: none;
+    color: #4eaeb4;
+    padding-right: 40px;
+    font-size: 15px;
+    font-family: Arial;
+    cursor: pointer; 
+`;
+
 export const Logo = styled.h1`
     color: white;
     font-family: monospace;
@@ -26,3 +35,14 @@ export const Logo = styled.h1`
     padding-left: 40px;
 `;
 
+export const DivNavHam = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const DivLinks = styled.div`
+    display: flex;
+    @media (max-width: 800px) {
+        display: none;
+    }
+`;
