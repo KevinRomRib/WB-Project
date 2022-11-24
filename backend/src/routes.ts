@@ -2,6 +2,7 @@ import express from "express";
 import ClienteController from "./controllers/ClienteController";
 import ProdutoController from "./controllers/ProdutoController";
 import ServicoController from "./controllers/ServicoController";
+import VendaController from "./controllers/VendaController";
 
 export const router = express.Router();
 
@@ -24,3 +25,6 @@ router.get("/servicos", ServicoController.findAll);
 router.get("/servicos/:id", ServicoController.findOne);
 router.patch("/servicos/modificar/:id", ServicoController.update);
 router.delete("/servicos/:id", ServicoController.delete);
+
+
+router.post("/pedido/cadastrar", VendaController.create);

@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import db from "../config";
 
+
 export const ClienteModel = db.define("clientes", {
     id: {
         type: DataTypes.INTEGER,
@@ -66,4 +67,28 @@ export const ServicoModel = db.define("servicos", {
         type: DataTypes.STRING,
         allowNull: false,
     }
+});
+
+
+
+
+export const VendaModel = db.define("vendas", {
+    id_da_venda: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    
+    id_do_cliente:{
+        type: DataTypes.INTEGER
+    },
+
+    id_do_produto:{
+        type: DataTypes.INTEGER
+    },
+
+    id_do_servico:{
+        type: DataTypes.INTEGER
+    },
 })
+
