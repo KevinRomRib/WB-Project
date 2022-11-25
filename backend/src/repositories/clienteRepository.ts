@@ -1,4 +1,4 @@
-import {ClienteModel} from "../database/models/modelo";
+import ClienteModel from "../database/models/cliente";
 
 export interface IClienteAtributes{
     nome: string;

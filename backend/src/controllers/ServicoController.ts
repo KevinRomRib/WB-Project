@@ -1,6 +1,6 @@
 import { Request, Response} from "express";
 import { ServicoRepository } from "../repositories/servicoRepository";
-import {ServicoModel} from "../database/models/modelo"
+
 
 interface IServicoController {
     create: (req: Request, res: Response) => Promise<Response>;

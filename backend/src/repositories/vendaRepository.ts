@@ -1,4 +1,4 @@
-import {PedidoModel} from "../database/models/modelo";
+import PedidoModel from "../database/models/pedido"
 
 export interface IVendaAtributes{
     id_da_venda: string | number

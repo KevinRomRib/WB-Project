@@ -1,6 +1,6 @@
 import { Request, Response} from "express";
 import { ProdutoRepository } from "../repositories/produtoRepository";
-import {ProdutoModel} from "../database/models/modelo"
+
 
 interface IProdutoController {
     create: (req: Request, res: Response) => Promise<Response>;

@@ -4,6 +4,10 @@ import ProdutoController from "./controllers/ProdutoController";
 import ServicoController from "./controllers/ServicoController";
 import VendaController from "./controllers/VendaController";
 
+
+
+import { listagemConsumoPorQntd } from "./controllers/ListagensController";
+
 export const router = express.Router();
 
 router.post("/clientes", ClienteController.create);
@@ -28,5 +32,9 @@ router.delete("/servicos/:id", ServicoController.delete);
 
 
 router.post("/pedido/cadastrar", VendaController.create);
-router.get("/todos_pedidos", VendaController.findAll);
-router.get("/todos_pedidos/:id", VendaController.findOne);
+router.get("/pedidos", VendaController.findAll);
+router.get("/pedidos/:id", VendaController.findOne);
+
+
+
+router.get('/listagemPorQtnd', listagemConsumoPorQntd)

@@ -1,4 +1,4 @@
-import {ProdutoModel} from "../database/models/modelo";
+import ProdutoModel from "../database/models/produto";
 
 export interface IProdutoAtributes{
     id?: string | number

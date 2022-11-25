@@ -1,4 +1,4 @@
-import {ServicoModel} from "../database/models/modelo";
+import ServicoModel from "../database/models/servico";
 
 export interface IServicoAtributes{
     id?: string | number
