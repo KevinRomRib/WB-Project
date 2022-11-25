@@ -28,3 +28,5 @@ router.delete("/servicos/:id", ServicoController.delete);
 
 
 router.post("/pedido/cadastrar", VendaController.create);
+router.get("/todos_pedidos", VendaController.findAll);
+router.get("/todos_pedidos/:id", VendaController.findOne);

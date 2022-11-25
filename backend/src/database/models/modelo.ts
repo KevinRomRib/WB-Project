@@ -72,7 +72,7 @@ export const ServicoModel = db.define("servicos", {
 
 
 
-export const VendaModel = db.define("vendas", {
+export const PedidoModel = db.define("vendas", {
     id_da_venda: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -92,3 +92,6 @@ export const VendaModel = db.define("vendas", {
     },
 })
 
+
+// PedidoModel.belongsTo(ServicoModel,{foreignKey:'id_do_servico'});
+// ServicoModel.PedidoModel = ServicoModel.hasMany(PedidoModel,{foreignKey:'id_do_servico'})
