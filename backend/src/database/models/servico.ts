@@ -15,12 +15,13 @@ export const ServicoModel = db.define("servicos", {
         allowNull: false,
     },
     preco: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     }
 });
 
-PedidoModel.belongsTo(ServicoModel,{foreignKey:"id_do_servico"})
+PedidoModel.belongsTo(ServicoModel,{foreignKey:'id_do_servico'})
+ServicoModel.hasMany(PedidoModel,{foreignKey:'id_do_servico'})
 
 
 

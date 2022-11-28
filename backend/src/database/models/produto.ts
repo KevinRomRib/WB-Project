@@ -14,12 +14,13 @@ const ProdutoModel = db.define("produtos", {
         allowNull: false,
     },
     preco: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     }
 })
 
 PedidoModel.belongsTo(ProdutoModel,{foreignKey: 'id_do_produto'});
+ProdutoModel.hasMany(PedidoModel,{foreignKey:'id_do_produto'})
 
 
 

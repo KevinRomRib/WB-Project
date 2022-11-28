@@ -27,6 +27,7 @@ export const PedidoModel = db.define("vendas", {
 })
 
 PedidoModel.belongsTo(ClienteModel,{foreignKey:'id_do_cliente'})
+ClienteModel.hasMany(PedidoModel,{foreignKey:'id_do_cliente'})
 
 
 export default PedidoModel
