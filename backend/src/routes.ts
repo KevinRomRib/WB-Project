@@ -9,6 +9,8 @@ import VendaController from "./controllers/VendaController";
 import { listagemConsumoPorQntd } from "./controllers/ListagensController";
 import { listagemConsumoPorMenorQntd } from "./controllers/ListagensController";
 import { listagem5clientesMaisConsumiramValor } from "./controllers/ListagensController";
+import { listagemMaisConsumidosProdutosOuServicos } from "./controllers/ListagensController";
+import { listagemMaisConsumidosProdutosOuServicosPorGenero } from "./controllers/ListagensController";
 
 export const router = express.Router();
 
@@ -42,3 +44,5 @@ router.get("/pedidos/:id", VendaController.findOne);
 router.get('/listagemPorQtnd', listagemConsumoPorQntd)
 router.get('/listagemPorMenorQtnd', listagemConsumoPorMenorQntd)
 router.get('/listagem5MaisConsumiramValor', listagem5clientesMaisConsumiramValor)
+router.get('/listagemMaisConsumidosProdutosOuServicos', listagemMaisConsumidosProdutosOuServicos)
+router.get('/listagemMaisConsumidosProdutosOuServicosPorGenero', listagemMaisConsumidosProdutosOuServicosPorGenero)

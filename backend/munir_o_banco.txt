@@ -17,6 +17,19 @@ INSERT INTO `atv_gerson`.`produtos` (nome, preco) VALUES ('Condicionador', 109);
 INSERT INTO `atv_gerson`.`produtos` (nome, preco) VALUES ('Tenis', 355);
 
 
+servicos
+
+INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Corte', 99);
+INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Lavar', 39);
+INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Hidratar', 49);
+INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Pentear', 19);
+INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Dicas', 59);
+
+
+
+
+
+
 vendas
 
 INSERT INTO `atv_gerson`.`vendas` (id_do_cliente, id_do_produto, id_do_servico) VALUES (1, 2, 3);
@@ -29,11 +42,3 @@ INSERT INTO `atv_gerson`.`vendas` (id_do_cliente, id_do_produto, id_do_servico) 
 INSERT INTO `atv_gerson`.`vendas` (id_do_cliente, id_do_produto, id_do_servico) VALUES (2, 5, 3);
 INSERT INTO `atv_gerson`.`vendas` (id_do_cliente, id_do_produto, id_do_servico) VALUES (2, 3, 3);
 
-
-servicos
-
-INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Corte', 99);
-INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Lavar', 39);
-INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Hidratar', 49);
-INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Pentear', 19);
-INSERT INTO `atv_gerson`.`servicos` (nome, preco) VALUES ('Dicas', 59);
