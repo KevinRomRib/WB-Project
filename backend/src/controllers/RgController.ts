@@ -1,8 +1,8 @@
 import { Request, Response} from "express";
+import { RgRepository } from "../repositories/rgRepository"
 
-import {RgsRepository} from "../repositories/rgsRepository"
 
-interface IRGsController {
+interface IRGController{
     create: (req: Request, res: Response) => Promise<Response>;
     findAll: (req: Request, res: Response) => Promise<Response>;
     findOne: (req: Request, res: Response) => Promise<Response>;
@@ -11,26 +11,22 @@ interface IRGsController {
 }
 
 
-export class RGsController implements IRGsController{
-    private rgRepository: RgsRepository
-    constructor(rgRepository: RgsRepository ) {
+export class RGController implements IRGController{
+    private rgRepository: RgRepository
+    constructor(rgRepository: RgRepository ) {
         this.rgRepository = rgRepository;
     }
 
     async create(req: Request, res: Response) {
-      try{
-        const rgRepository = new RgsRepository();
+        const rgRepository = new RgRepository();
         const rg = await rgRepository.create(req.body)
         return res.status(201).json(rg)
-      }
-      catch(error) {
-        console.log(error)
-      }
+
     };
 
     async findAll(req: Request, res:Response) {
         try {
-            const rgRepository = new RgsRepository();
+            const rgRepository = new RgRepository();
             const rgs = await rgRepository.findAll();
             return rgs.length > 0
               ? res.status(200).json(rgs)
@@ -42,7 +38,7 @@ export class RGsController implements IRGsController{
 
     async findOne(req: Request, res: Response) {
         const { id } = req.params;
-        const rgRepository = new RgsRepository();
+        const rgRepository = new RgRepository();
         const rg = await rgRepository.findOne(id);
         return rg
           ? res.status(200).json(rg)
@@ -53,17 +49,17 @@ export class RGsController implements IRGsController{
 
       async update(req: Request, res: Response) {
         const { id } = req.params;
-        const rgRepository = new RgsRepository();
+        const rgRepository = new RgRepository();
         await rgRepository.update(id, req.body);
         return res.status(200).send("RG atualizado com sucesso");
       };
-
+  
       async delete(req: Request, res: Response) {
         const { id } = req.params;
-        const rgRepository = new RgsRepository();
+        const rgRepository = new RgRepository();
         await rgRepository.delete(id);
         return res.status(204).send("RG deletado com sucesso");
       };
 }
 
-export default new RGsController(new RgsRepository);
+export default new RGController(new RgRepository);

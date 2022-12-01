@@ -8,7 +8,7 @@ export interface IProdutoAtributes{
 
 }
 
-export interface IProcessoUpdate{
+export interface IProdutoUpdate{
     id?: string | number
     nome: string;
     preco: number;

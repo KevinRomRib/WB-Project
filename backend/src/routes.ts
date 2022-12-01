@@ -3,7 +3,8 @@ import ClienteController from "./controllers/ClienteController";
 import ProdutoController from "./controllers/ProdutoController";
 import ServicoController from "./controllers/ServicoController";
 import VendaController from "./controllers/VendaController";
-import RGsController from "./controllers/RGsController";
+import RgController from "./controllers/RgController";
+import TelefoneController from "./controllers/TelefoneController";
 
 
 
@@ -40,9 +41,19 @@ router.post("/pedido/cadastrar", VendaController.create);
 router.get("/pedidos", VendaController.findAll);
 router.get("/pedidos/:id", VendaController.findOne);
 
-router.post("/rg/cadastrar", VendaController.create);
-router.get("/rgs", VendaController.findAll);
-router.get("/rg/:id", VendaController.findOne);
+router.post("/rg", RgController.create);
+router.get("/rg", RgController.findAll);
+router.get("/rg/:id", RgController.findOne);
+router.patch("/rg/modificar/:id", RgController.update);
+router.delete("/rg/:id", RgController.delete);
+
+
+router.post("/telefone", TelefoneController.create);
+router.get("/telefone", TelefoneController.findAll);
+router.get("/telefone/:id", TelefoneController.findOne);
+router.patch("/telefone/modificar/:id", TelefoneController.update);
+router.delete("/telefone/:id", TelefoneController.delete);
+
 
 
 

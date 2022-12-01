@@ -4,8 +4,6 @@ export interface IClienteAtributes{
     nome: string;
     nomeSocial: string;
     cpf?: number;
-    rg?: number;
-    telefone?: number;
     genero?: string;
 
 }
@@ -14,8 +12,6 @@ export interface IClienteUpdate{
     nome: string;
     nomeSocial: string;
     cpf?: number;
-    rg?: number;
-    telefone?: number;
     genero?: string;
 }
 
@@ -32,13 +28,11 @@ export class ClienteRepository{
     }
 
     async create(data: IClienteAtributes) {
-        const { nome, nomeSocial, cpf, rg, telefone, genero } = data;
+        const { nome, nomeSocial, cpf, genero } = data;
         const cliente = await ClienteModel.create({
             nome,
             nomeSocial,
             cpf,
-            rg,
-            telefone,
             genero
         });
         return cliente
