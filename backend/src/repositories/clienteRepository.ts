@@ -4,6 +4,9 @@ export interface IClienteAtributes{
     nome: string;
     nomeSocial: string;
     cpf?: number;
+    numero_rg: number;
+    data_de_emissao: Date;
+    numero_de_telefone: number;
     genero?: string;
 
 }
@@ -12,6 +15,9 @@ export interface IClienteUpdate{
     nome: string;
     nomeSocial: string;
     cpf?: number;
+    numero_rg: number;
+    data_de_emissao: Date;
+    numero_de_telefone: number;
     genero?: string;
 }
 
@@ -28,11 +34,14 @@ export class ClienteRepository{
     }
 
     async create(data: IClienteAtributes) {
-        const { nome, nomeSocial, cpf, genero } = data;
+        const { nome, nomeSocial, cpf, numero_rg, data_de_emissao, numero_de_telefone, genero } = data;
         const cliente = await ClienteModel.create({
             nome,
             nomeSocial,
             cpf,
+            numero_rg,
+            data_de_emissao,
+            numero_de_telefone,
             genero
         });
         return cliente

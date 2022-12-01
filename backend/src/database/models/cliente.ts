@@ -20,6 +20,16 @@ const ClienteModel = db.define("clientes", {
         allowNull: false, 
         unique: true,
     },
+    numero_rg:{
+        type: DataTypes.INTEGER
+    },
+
+    data_de_emissao:{
+        type: DataTypes.DATE
+    },
+    numero_de_telefone:{
+        type: DataTypes.INTEGER
+    },
     genero: {
         type: DataTypes.STRING,
         allowNull: false
