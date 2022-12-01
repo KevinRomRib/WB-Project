@@ -3,6 +3,7 @@ import ClienteController from "./controllers/ClienteController";
 import ProdutoController from "./controllers/ProdutoController";
 import ServicoController from "./controllers/ServicoController";
 import VendaController from "./controllers/VendaController";
+import RGsController from "./controllers/RGsController";
 
 
 
@@ -38,6 +39,11 @@ router.delete("/servicos/:id", ServicoController.delete);
 router.post("/pedido/cadastrar", VendaController.create);
 router.get("/pedidos", VendaController.findAll);
 router.get("/pedidos/:id", VendaController.findOne);
+
+router.post("/rg/cadastrar", VendaController.create);
+router.get("/rgs", VendaController.findAll);
+router.get("/rg/:id", VendaController.findOne);
+
 
 
 
