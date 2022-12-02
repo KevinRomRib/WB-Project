@@ -21,3 +21,17 @@ export const DivLabelInput = styled.div`
         color: #9a9a9a;
     }
     `;
+
+export const DivOpcoes = styled.div`
+    display: flex;
+    gap: 20px;
+`;
+
+export const Icone = styled.div`
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    :hover {
+        color: #070707c3;
+    }
+`;

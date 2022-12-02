@@ -4,7 +4,7 @@ import api from "../../../services/api";
 import { useNavigate, useParams, Link } from 'react-router-dom';
 
 // Importando styles
-import { DivLabelInput, DivGeral, DivButton, DivSubmit } from './style'
+import { DivLabelInput, DivGeral, DivButton, DivSubmit, DivNovoRg } from './style'
 
 function ModificarCliente() {
 
@@ -29,9 +29,19 @@ function ModificarCliente() {
         <>
             <DivGeral>
                 <form action="" onSubmit={handleSubmit(onSubmit)}>
-                    <div style={{display: 'flex', flexDirection: 'column'}}>
-                        <Link to={`/cliente/modificar/rg/${idUsuario}`}>Adiocionar novo RG</Link>
-                        <Link to={`/cliente/modificar/telefone/${idUsuario}`}>Adiocionar novo Telefone</Link>
+                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                        <Link to={`/cliente/modificar/rg/${idUsuario}`} style={{textDecoration: 'none',
+                        color: '#fff'}}>
+                            <DivNovoRg>
+                                Adiocionar novo RG
+                            </DivNovoRg>
+                        </Link>
+                        <Link to={`/cliente/modificar/telefone/${idUsuario}`} style={{textDecoration: 'none',
+                        color: '#fff'}}>
+                            <DivNovoRg>
+                                Adiocionar novo Telefone
+                            </DivNovoRg>
+                        </Link>
                     </div>
                     <DivLabelInput>
                         <label htmlFor="nome">Nome</label>

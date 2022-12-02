@@ -54,3 +54,15 @@ export const DivSubmit = styled.div`
     justify-content: center;
     padding-top: 20px;
 `;
+
+export const DivNovoRg = styled.div`
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e1bee7;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+`;

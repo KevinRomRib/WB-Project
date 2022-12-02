@@ -22,9 +22,9 @@ function ListaClientes() {
 
     const listUsers = clientes.map((cliente) =>  
         <Li key={cliente.nome}>
-                <Link style={{display: 'flex', width: '100%'}} to={`/cliente/${cliente.id}`}>                
-                    <Nome>{cliente.nome}</Nome>
-                </Link>
+            <Link style={{display: 'flex', width: '100%'}} to={`/cliente/${cliente.id}`}>                
+                <Nome>{cliente.nome}</Nome>
+            </Link>
             <DivOpcoes>
                 <Link to={`/cliente/modificar/${cliente.id}`}>
                     <Icone><ion-icon name="create-outline"></ion-icon></Icone>
