@@ -41,6 +41,7 @@ router.post("/pedido/cadastrar", VendaController.create);
 router.get("/pedidos", VendaController.findAll);
 router.get("/pedidos/:id", VendaController.findOne);
 
+
 router.post("/rg", RgController.create);
 router.get("/rg", RgController.findAll);
 router.get("/rg/:id", RgController.findOne);

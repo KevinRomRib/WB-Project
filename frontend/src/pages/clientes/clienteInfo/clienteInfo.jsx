@@ -27,6 +27,68 @@ function ClienteInfo() {
         loadClientes();
     }, []);
 
+    const [rgs, setRgs] = useState([]);
+
+    useEffect(() => {
+
+        async function loadRgs() {
+
+            const response = await api.get(`/rg`);
+            setRgs(response.data);
+
+        }
+        loadRgs();
+    }, []);
+    
+    var listaRgs = []
+    const rgFilter = rgs.forEach(item => {
+        if(item.id_do_cliente_proprietario == idUsuario) {
+            listaRgs.push(item)
+        }
+    })
+
+    const numeroRg = listaRgs.map((rg) => 
+        <p key={rg} className="segundo">
+            {rg.numero_rg}
+        </p>
+    )
+
+    const dataEmissaoRg = listaRgs.map((data) => 
+        <p key={data} className="segundo">
+            {data.data_de_emissao}
+        </p>
+    )
+
+
+    const [tels, setTels] = useState([]);
+
+    useEffect(() => {
+
+        async function loadTels() {
+
+            const response = await api.get(`/telefone`);
+            setTels(response.data);
+
+        }
+        loadTels();
+    }, []);
+    
+    var listaTel = []
+
+    const telFilter = tels.forEach(item => {
+        if(item.id_do_cliente_proprietario == idUsuario) {
+            listaTel.push(item)
+        }
+    })
+    
+    const numeroTel = listaTel.map((tel) => 
+        <p key={tel} className="segundo">
+            {tel.numero}
+        </p>
+    )
+
+
+
     return (
         <>
             <GlobalStyle/>
@@ -56,13 +118,22 @@ function ClienteInfo() {
                     <DivLabelInput>
                         <p className="primeiro">RG</p>
                         <div>
-                            <p className="segundo">{clientes.rg}</p>
+                            <p className="segundo">{clientes.numero_rg}</p>
+                            {numeroRg}
+                        </div>
+                    </DivLabelInput>
+                    <DivLabelInput>
+                        <p className="primeiro">Data Emissão</p>
+                        <div>
+                            <p className="segundo">{clientes.data_de_emissao}</p>
+                            {dataEmissaoRg}
                         </div>
                     </DivLabelInput>
                     <DivLabelInput>
                         <p className="primeiro">Telefone</p>
                         <div>
-                            <p className="segundo">{clientes.telefone}</p>
+                            <p className="segundo">{clientes.numero_de_telefone}</p>
+                            {numeroTel}
                         </div>
                     </DivLabelInput>
                     <DivLabelInput>

@@ -6,6 +6,8 @@ import Cliente from './pages/clientes'
 import ClienteInfo from "./pages/clientes/clienteInfo/clienteInfo";
 import CadastroCliente from "./pages/clientes/cadastroCliente";
 import ModificarCliente from './components/listaClientes/modificarCliente/index'
+import CadRG from "./pages/clientes/cadastroRg";
+import CadTel from "./pages/clientes/cadastroTelefone";
 
 // Import de Produto~
 import Produtos from './pages/produtos'
@@ -35,6 +37,8 @@ function App() {
         <Route path="/cliente/:id" element={<ClienteInfo />} />
         <Route path="/cliente/cadastrar" element={<CadastroCliente />} />
         <Route path="/cliente/modificar/:id" element={<ModificarCliente />} />
+        <Route path="/cliente/modificar/rg/:id" element={<CadRG />} />
+        <Route path="/cliente/modificar/telefone/:id" element={<CadTel />} />
         <Route path="/cliente/excluir/:id" element={<Cliente />} />
         
         {/* Produtos */}

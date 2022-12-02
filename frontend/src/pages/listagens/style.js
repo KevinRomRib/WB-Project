@@ -6,6 +6,14 @@ export const DivGeral = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
+    ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #4eaeb4;
+        font-size: 20px;
+    }
 `;
 
 export const Titulo = styled.h1`

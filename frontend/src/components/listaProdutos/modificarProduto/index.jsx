@@ -10,7 +10,7 @@ function ModificarProduto() {
 
     const FindId = useParams();
     const idUsuario = new String(FindId.id)
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = async data => {
     api.patch(`/produtos/modificar/${idUsuario}`, {

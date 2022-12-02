@@ -24,8 +24,8 @@ export class RgRepository{
         return rgs;
     }
 
-    async findOne(id_do_rg: number | string) {
-        const rg = await RgModel.findOne({ where: {id_do_rg} });
+    async findOne(id_do_cliente_proprietario: number | string) {
+        const rg = await RgModel.findOne({ where: {id_do_cliente_proprietario} });
         return rg
     }
 

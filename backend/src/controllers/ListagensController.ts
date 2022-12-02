@@ -221,11 +221,11 @@ export const listagemMaisConsumidosProdutosOuServicosPorGenero = async (req, res
 
         let ordenadoM = Object.keys(filtro.M).map(a=>{
             return {...filtro.M[a]}
-        }).sort((a,b) => b.qtd - a.qtd)
+        }).sort((a,b) => b.qtd - a.qtd).slice(0, 1)
 
         let ordenadoF = Object.keys(filtro.F).map(a=>{
             return {...filtro.F[a]}
-        }).sort((a,b) => b.qtd - a.qtd)
+        }).sort((a,b) => b.qtd - a.qtd).slice(0, 1)
 
         res.status(201).json({ordenadoM, ordenadoF})
     } catch (error) {

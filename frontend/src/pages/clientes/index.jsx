@@ -31,7 +31,6 @@ function Clientes() {
             </DivGeral>
         </>
     )
-
 }
 
 export default Clientes;

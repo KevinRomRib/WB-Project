@@ -18,7 +18,7 @@ export const TelefoneModel = db.define("telefone", {
     },
 
     numero:{
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
     }
 })
 

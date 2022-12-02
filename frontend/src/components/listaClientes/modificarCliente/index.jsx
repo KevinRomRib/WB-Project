@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import api from "../../../services/api"
-import { useNavigate, useParams } from 'react-router-dom';
+import api from "../../../services/api";
+import { useNavigate, useParams, Link } from 'react-router-dom';
 
 // Importando styles
 import { DivLabelInput, DivGeral, DivButton, DivSubmit } from './style'
@@ -11,7 +11,7 @@ function ModificarCliente() {
     const FindId = useParams();
     const idUsuario = new Number(FindId.id)
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = async data => {
     api.patch(`/clientes/modificar/${idUsuario}`, {
@@ -29,6 +29,10 @@ function ModificarCliente() {
         <>
             <DivGeral>
                 <form action="" onSubmit={handleSubmit(onSubmit)}>
+                    <div style={{display: 'flex', flexDirection: 'column'}}>
+                        <Link to={`/cliente/modificar/rg/${idUsuario}`}>Adiocionar novo RG</Link>
+                        <Link to={`/cliente/modificar/telefone/${idUsuario}`}>Adiocionar novo Telefone</Link>
+                    </div>
                     <DivLabelInput>
                         <label htmlFor="nome">Nome</label>
                         <input type="text" name="nome" required {...register("nome", { required: true })} />

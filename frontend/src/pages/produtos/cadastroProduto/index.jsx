@@ -8,7 +8,7 @@ import { DivLabelInput, DivGeral, DivButton, DivSubmit } from './style'
 
 function CadastroProduto() {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = async data => {
       console.log(data);

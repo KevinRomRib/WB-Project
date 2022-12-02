@@ -16,8 +16,9 @@ function CadastroCliente() {
         nome: data.nome,
         nomeSocial: data.nomeSocial,
         cpf: data.cpf,
-        rg: data.rg,
-        telefone: data.telefone,
+        numero_rg: data.numero_rg,
+        data_de_emissao: data.data_de_emissao,
+        numero_de_telefone: data.numero_de_telefone,
         genero: data.genero,
       });
       navigate('/');
@@ -40,12 +41,16 @@ function CadastroCliente() {
                         <input type="text" name="cpf" required  {...register("cpf", { required: true })}  />
                     </DivLabelInput>
                     <DivLabelInput>
-                        <label htmlFor="rg">RG</label>
-                        <input type="text" name="rg" required  {...register("rg", { required: true })}  />
+                        <label htmlFor="numero_rg">RG</label>
+                        <input type="text" name="numero_rg" required  {...register("numero_rg", { required: true })}  />
                     </DivLabelInput>
                     <DivLabelInput>
-                        <label htmlFor="telefone">Telefone</label>
-                        <input type="tel" name="telefone" required  {...register("telefone", { required: true })}  />
+                        <label htmlFor="data_de_emissao">Data Emissão</label>
+                        <input type="text" name="data_de_emissao" placeholder="aaaa-mm-dd" required  {...register("data_de_emissao", { required: true })}  />
+                    </DivLabelInput>
+                    <DivLabelInput>
+                        <label htmlFor="numero_de_telefone">Telefone</label>
+                        <input type="tel" name="numero_de_telefone" required  {...register("numero_de_telefone", { required: true })}  />
                     </DivLabelInput>
                     <DivLabelInput>
                         <label htmlFor="genero">Genero</label>

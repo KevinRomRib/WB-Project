@@ -18,7 +18,7 @@ export const RgModel = db.define("rg", {
     },
 
     numero_rg:{
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
     },
 
     data_de_emissao:{

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom"
 import api from "../../services/api";
 import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
@@ -9,7 +8,7 @@ import { DivLabelInput, DivGeral, DivButton, DivSubmit } from './style'
 
 function Pedido() {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = async data => {
       console.log(data);
